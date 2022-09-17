@@ -1,1 +1,1 @@
-print("U is gay!")
+print("U is gay!")\
