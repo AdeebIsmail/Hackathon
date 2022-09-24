@@ -12,4 +12,4 @@ def integrals(eq):
 def derivative(eq):
     x = simp.symbols("x")
     eq = simp.parse_expr(input())
-    return  simp.diff(eq, x)
+    return simp.diff(eq, x)
