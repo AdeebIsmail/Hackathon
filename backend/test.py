@@ -1,4 +1,5 @@
 import requests
+import json
 
 arrival = ''
 destination = ''
@@ -21,4 +22,10 @@ def run_api(arrival, destination, departure_date,num_adults):
     }
 
     response = requests.request("GET", url, headers=headers, params=querystring)
-    print(response.text)
+    y = json.loads(response.text)
+    airlineData = y['getAirFlightDepartures']['results']['result']['airline_data']
+    returnA = []
+
+    for x in airlineData.keys():
+        returnA.append(x)
+    print(returnA)
