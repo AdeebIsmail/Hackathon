@@ -57,15 +57,15 @@ def getHotels(checkIn, checkOut, id):
 
     arrHotels = []
 
-    for x in range(0, int(len(y['hotels'])/10)):
+   for x in range(0, int(len(y['hotels'])/10)):
         temp = []
         if u'name' in y['hotels'][x]:
             temp.append(y['hotels'][x][u'name'])
-        if u'hotelId' in y['hotels'][x]:
-            temp.append(y['hotels'][x][u'hotelId'])
-        if u'address' in y['hotels'][x]['location']:
-            adre = list(y['hotels'][0]['location']['address'].values())
-            temp.append(adre[0] + ', ' + adre[1] + ' ' + adre[2] + ', ' + adre[3] + ', ' + adre[5])
+        #if u'hotelId' in y['hotels'][x]:
+         #   temp.append(y['hotels'][x][u'hotelId'])
+        #if u'address' in y['hotels'][x]['location']:
+         #   adre = list(y['hotels'][0]['location']['address'].values())
+         #   temp.append(adre[0] + ', ' + adre[1] + ' ' + adre[2] + ', ' + adre[3] + ', ' + adre[5])
         if u'ratesSummary' in y['hotels'][x]:
             temp.append(y['hotels'][x]['ratesSummary']['minPrice'])
 
