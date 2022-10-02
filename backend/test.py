@@ -10,3 +10,10 @@ def my_profile():
     }
 
     return response_body
+
+@api.route('/data')
+def flightdata():
+    response_body = {
+        "name": "Nagato",
+        "about" :"Hello! I'm a full stack developer that loves python and javascript"
+    }
