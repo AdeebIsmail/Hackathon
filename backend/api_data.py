@@ -60,13 +60,15 @@ def run_api(arrival, destination, departure_date,num_adults):
     airlineData = y['getAirFlightDepartures']['results']['result']['airline_data'] # getting airline data
     allInfo = []
 
-    for x in airlineData.keys():
+for x in airlineData.keys():
+        
         temp = []
         temp.append(airlineData[x]['name'])
         temp.append(airlineData[x]['code'])
         temp.append(airlineData[x]['websiteUrl'])
         temp.append(airlineData[x]['phoneNumber'])
-        allInfo.append(temp)
+        #allInfo.append(temp)
+        allInfo.append(airlineData[x]['name'])
 
 
     hotelsAndPlanes = []
