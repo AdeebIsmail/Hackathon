@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import requests
 import json
 
@@ -29,3 +30,24 @@ def run_api(arrival, destination, departure_date,num_adults):
     for x in airlineData.keys():
         returnA.append(x)
     print(returnA)
+=======
+from flask import Flask
+
+api = Flask(__name__)
+
+@api.route('/profile')
+def my_profile():
+    response_body = {
+        "name": "Nagato",
+        "about" :"Hello! I'm a full stack developer that loves python and javascript"
+    }
+
+    return response_body
+
+@api.route('/data')
+def flightdata():
+    response_body = {
+        "name": "Nagato",
+        "about" :"Hello! I'm a full stack developer that loves python and javascript"
+    }
+>>>>>>> 3ed1671a73636f0de8f3d3b3410866d8e9e4761e
