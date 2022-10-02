@@ -19,21 +19,6 @@ arrival_date = ''
 
 
 def run_api(arrival, destination, departure_date,num_adults):
-    url = "https://priceline-com-provider.p.rapidapi.com/v2/flight/departures"
-
-    querystring = {"sid": "iSiX639", "departure_date": departure_date, "adults": num_adults,
-                   "origin_airport_code": arrival, "destination_airport_code": destination}
-
-    headers = {
-        "X-RapidAPI-Key": "75b97bcf14msh05aaf11d45af270p144a1djsn97dba5f65bc6",
-        "X-RapidAPI-Host": "priceline-com-provider.p.rapidapi.com"
-    }
-
-    response = requests.request("GET", url, headers=headers, params=querystring)
-    y = json.loads(response.text)
-
-    cityData = y['getAirFlightDepartures']['results']['result']['search_data']['search_0'] # getting city data
-
     
     global localLocationCity 
     localLocationCity = cityData['origin']['city']
@@ -56,6 +41,24 @@ def run_api(arrival, destination, departure_date,num_adults):
     global departureDate
     departureDate = departure_date
     
+    
+    url = "https://priceline-com-provider.p.rapidapi.com/v2/flight/departures"
+
+    querystring = {"sid": "iSiX639", "departure_date": departure_date, "adults": num_adults,
+                   "origin_airport_code": arrival, "destination_airport_code": destination}
+
+    headers = {
+        "X-RapidAPI-Key": "75b97bcf14msh05aaf11d45af270p144a1djsn97dba5f65bc6",
+        "X-RapidAPI-Host": "priceline-com-provider.p.rapidapi.com"
+    }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+    y = json.loads(response.text)
+
+    cityData = y['getAirFlightDepartures']['results']['result']['search_data']['search_0'] # getting city data
+
+    
+
 
     airlineData = y['getAirFlightDepartures']['results']['result']['airline_data'] # getting airline data
     allInfo = []
