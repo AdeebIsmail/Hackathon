@@ -27,5 +27,5 @@ def run_api(arrival, destination, departure_date,num_adults):
     returnA = []
 
     for x in airlineData.keys():
-        returnA.append(x)
+        returnA.append(airlineData[x]['name'])
     print(returnA)
