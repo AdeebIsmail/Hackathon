@@ -8,8 +8,6 @@ departure_date = ''
 arrival_date = ''
 
 
-
-
 def run_api(arrival, destination, departure_date,num_adults):
     url = "https://priceline-com-provider.p.rapidapi.com/v2/flight/departures"
 
